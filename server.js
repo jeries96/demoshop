@@ -112,9 +112,9 @@ app.delete('/delete-item', function (req, res) {
       });    
       res.send( menuDb )
 })
-
-app.listen(3000 , ()=> {
-    console.log("Port is running in 3000")
+const port = process.env.PORT ||3000;
+app.listen(port , ()=> {
+    console.log(`Port is running in ${port}`)
 })
 
 app.post('/addProduct', (req, res) => {
@@ -136,3 +136,7 @@ app.post('/addProduct', (req, res) => {
       
   })
   
+
+  app.listen(3000 , ()=> {
+    console.log("Port is running in 3000")
+})
